@@ -203,6 +203,8 @@ Retrieve a Book
 
     private void RetrieveBook()
     {
+    
+        Book _retrievedBook = null;
         this.displayMessage += "\n*** Load book**\n";
         Context.LoadAsync<Book>(bookID,
                                  (AmazonDynamoResult<Book> result) =>
