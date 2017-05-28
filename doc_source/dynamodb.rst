@@ -92,7 +92,7 @@ client as follows::
 
     var credentials = new CognitoAWSCredentials(IDENTITY_POOL_ID, RegionEndpoint.USEast1);
     AmazonDynamoDBClient client = new AmazonDynamoDBClient(awsCredentials);
-    DynamoDbContext Context = new DynamoDBContext(client);
+    DynamoDBContext Context = new DynamoDBContext(client);
 
 The AmazonDynamoDBClient class is the entry point for the DynamoDB API. The class provides instance
 methods for creating, describing, updating, and deleting tables, among other operations. Context
@@ -205,7 +205,7 @@ Retrieve a Book
     {
         this.displayMessage += "\n*** Load book**\n";
         Context.LoadAsync<Book>(bookID,
-                                 (AmazonDynamoResult<Book> result) =>
+                                 (AmazonDynamoDBResult<Book> result) =>
         {
             if (result.Exception != null)
             {
